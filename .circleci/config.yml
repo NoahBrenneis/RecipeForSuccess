@@ -20,3 +20,4 @@ workflows:
           app-dir: ~/project/recipe-for-success
           # If you are using yarn, change the line below from "npm" to "yarn"
           pkg-manager: npm
+          run-command: run web
