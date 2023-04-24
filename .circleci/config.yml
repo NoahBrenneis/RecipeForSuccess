@@ -11,11 +11,12 @@ jobs:
     executor:
       name: node/default
       tag: '16.10'
+    working_directory: ~/project/recipe-for-success
     steps:
       - checkout:
-          path: ~/project/recipe-for-success
+          path: ~/recipe-for-success
       - node/install-packages
-      - run: npm run start
+      - run: npm run test
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
