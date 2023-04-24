@@ -11,10 +11,9 @@ jobs:
     executor:
       name: node/default
       tag: '16.10'
-    working_directory: ~/project/recipe-for-success
     steps:
-      - checkout:
-          path: ~/recipe-for-success
+      - checkout
+      - run: cd recipe-for-success
       - node/install-packages
       - run: npm run test
 # Invoke jobs via workflows
