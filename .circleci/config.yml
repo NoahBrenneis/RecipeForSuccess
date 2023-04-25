@@ -14,6 +14,7 @@ jobs:
       tag: '16.10'
     steps:
       - checkout
+      - run: whoami
       - run: npm install -g expo-cli
       - run: cd recipe-for-success
       - run: expo init
