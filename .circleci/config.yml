@@ -7,25 +7,24 @@ orbs:
   node: circleci/node@4.7
 
 jobs:
-  build-project:
-    # working_directory: ~/project/recipe-for-success
+  install-and-build:
+    working_directory: ~/project/recipe-for-success
     executor:
       name: node/default
       tag: '16.10'
     steps:
       - checkout
-      - run: whoami
-      - run: npm install -g expo-cli
-      - run: cd recipe-for-success
-      - run: expo init
-      - run: expo start
+      - run: npm install #-g expo-cli
+      - run: npm start
+     # - run: expo init
+     # - run: expo start
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
   run-app: # This is the name of the workflow, feel free to change it to better match your workflow.
     # Inside the workflow, you define the jobs you want to run.
     jobs:
-       - build-project
+       - install-and-build
           # This is the node version to use for the `cimg/node` tag
           # Relevant tags can be found on the CircleCI Developer Hub
           # https://circleci.com/developer/images/image/cimg/node
