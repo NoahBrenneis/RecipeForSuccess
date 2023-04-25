@@ -8,14 +8,14 @@ orbs:
 
 jobs:
   build-project:
-    working_directory: ~/project/recipe-for-success
+    # working_directory: ~/project/recipe-for-success
     executor:
       name: node/default
       tag: '16.10'
     steps:
       - checkout
-      - run: sudo -s
       - run: npm install -g expo-cli
+      - run: cd recipe-for-success
       - run: expo init
       - run: expo start
 # Invoke jobs via workflows
